@@ -83,23 +83,6 @@ header nav ul li a:hover {
     overflow: hidden; 
     font-size: 70px;
     font-family: 'Courier New', monospace;
-    animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
-}
-
-@keyframes typewriter{
-    from {
-        width: 0;
-    } to {
-        width: 10em;
-    }
-  }
-  
-@keyframes blinkTextCursor{
-    from {
-        border-right-color: rgba(255,255,255,.75);
-    } to {
-        border-right-color: transparent;
-    }
 }
 
 #home-img {

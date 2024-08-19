@@ -10,5 +10,17 @@ function changePhoto() {
         photo.src = before; 
         photo.type = "before";
     }
-   
+}
+
+var i = 0;
+var txt = "I'm Stevannie";
+var speed = 200;
+
+function typeWriter() {
+    
+    if (i < txt.length) {
+        document.getElementById("home-two").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
 }

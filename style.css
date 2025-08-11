@@ -1,0 +1,313 @@
+:root{
+    --sage-100: #F4F7F3;
+    --sage-200: #E9EFE7;
+    --sage-500: #8EA58A;
+    --sage-700: #6F8A6F;
+    --white: #ffffff;
+    --muted: #657268;
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(19, 27, 19, 0.08);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    margin:0;
+    background: linear-gradient(180deg,var(--white) 0%, var(--sage-200) 100%);
+    color:#142619;
+    line-height:1.5;
+    overflow: hidden;
+}
+
+.container{
+    max-width:85%;
+    margin: auto;
+    position: relative; /* buat tombol panah absolute */
+}
+
+header{
+    margin: auto;
+    position: sticky; top: 25px; z-index: 1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px;border-radius:16px;
+    backdrop-filter:blur(6px);
+    background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    box-shadow:var(--shadow);
+}
+
+.brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:10px;
+    background:var(--sage-500);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:var(--white);
+    font-size:18px;
+    overflow: hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+nav a{
+    color:inherit;
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 12px;
+    border-radius:10px;
+}
+
+nav a:hover{
+    background:var(--sage-200);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    height: 100vh;
+}
+main::-webkit-scrollbar {
+    display: none;
+}
+main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+section {
+    min-width: 85vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 36px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 28px;
+    align-items: center;
+    height: 100%;
+}
+
+.intro h1{
+    font-size:2.1rem;
+    margin:0 0 8px;
+}
+
+.intro p{
+    color:var(--muted);
+    margin:0 0 18px;
+}
+
+.cta{
+    display:flex;
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:10px;
+    border:0;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.btn-primary {
+    background: var(--sage-500);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--sage-500);
+    border: 2px solid var(--sage-500);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 2px solid var(--sage-200);
+    color: var(--sage-700);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-ghost:hover {
+    background: var(--sage-200);
+    border-color: var(--sage-200);
+}
+
+.card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:18px;
+    box-shadow:var(--shadow);
+}
+
+.about{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    height: auto;
+}
+
+.skills{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.skill{
+    background:var(--sage-100);
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:600;
+    display:inline-block;
+}
+
+.projects{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.project-title{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: none;
+}
+
+.project.card{
+    transition: transform 0.3s ease;
+}
+
+.project.card:hover{
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.project.card a{
+    color: black;
+    text-decoration: none;
+}
+
+.project h3{
+    margin:0 0 6px;
+}
+
+.project p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.project img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-radius:8px;
+}
+
+.contact{
+    margin-top:28px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.contact input,.contact textarea{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #E6EAE6;
+    background:var(--white);
+    font-size:14px;
+}
+
+.contact textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.muted{
+    color:var(--muted);
+}
+
+.stack{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+/* Tombol panah navigasi */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(142, 165, 138, 0.8); /* sage-500 dengan opacity */
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-arrow:hover {
+    background: var(--sage-500);
+    box-shadow: 0 6px 20px rgba(111, 138, 111, 0.7);
+}
+
+.nav-left {
+    left: 12px;
+}
+
+.nav-right {
+    right: 12px;
+}
